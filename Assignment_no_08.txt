@@ -1,0 +1,26 @@
+1) Assume each salesperson has a 12% commission. Write a query on the orders table that will produce the order number, the salesperson number, and the amount of the salesperson’s commission for that order.
+
+ans:
+	select onum,snum,amt*0.12 as comm_amt
+from orders;
+
+2) Write a query on the Customers table that will find the highest rating in each city. Put the output in this form:
+
+ans: 
+select city, max(rating) "Highhest Rating Is :"
+from customers
+order by city;
+
+3) Write a query that lists customers in descending order of rating. Output the rating field first, followed by the customer’s name and number.
+
+ans:
+	select rating,cname,snum from customers
+order by  rating 	desc;
+
+4) Write a query that totals the orders for each day and places the results in descending order.	
+
+ans: 
+	select count(odate)"TOtal Orders",odate
+from orders
+group by 	odate
+order by "Total Orders";

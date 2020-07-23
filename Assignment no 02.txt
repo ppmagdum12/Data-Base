@@ -1,0 +1,20 @@
+			Assignment –2
+		Introducing Relational Databases.
+
+
+1) Which field of the Customers table is the primary key?
+
+ans: cnum table is the primary key in customer table.
+
+2) What is the 4th column of the Customers table?
+
+ans: rating
+
+3) What is another word for row? For column?
+
+ans: The word for row are tuple, entity, opportunity.
+     The word for colomun are attribue ,method.
+   
+4) Why isn’t it possible to see the first five rows of a table?
+
+ans:  Because tuples do not have orders. 
