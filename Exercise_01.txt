@@ -1,0 +1,201 @@
+Student ID 	:	200240320070
+Student Name 	:	Onkar Patil
+Center 		:	Kharghar
+Assignment	:	Exercise 1
+==========================================================
+
+1. Create the table SEMP with the following structure:-
+
+
+create table SEMP
+(
+EMPNO CHAR(4),
+EMPNAME CHAR(20),
+BASIC FLOAT(9,2),
+DEPTNO CHAR(2),
+DEPTHEAD CHAR(4) 
+}
+===========================================================
+
+2)Create the table SDEPT with the following structure:-
+
+
+create table SDEPT
+(
+DEPTNO CHAR(2),
+DEPTNAME CHAR(15) 
+);
+===========================================================
+
+3. Insert into the SDEPT table the following values:-
+
+Insert into SDEPT 
+values(
+'10', 'Development'
+
+);
+Insert into SDEPT 
+values(
+'20', 'Training '
+
+);
+
+===========================================================
+
+4. Insert into the SEMP table the following values:-
+
+Insert into SEMP 
+(EMPNO,EMPNAME,BASIC,DEPTNO)values(
+'0001', 'SUNIL', '6000', '10 ')
+;
+
+Insert into SEMP 
+(EMPNO,EMPNAME,BASIC,DEPTNO)values(
+'0002', 'HIREN', '8000', '20 ')
+;
+
+Insert into SEMP 
+(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)values(
+'0003', 'ALI', '4000', '20 ','0001')
+;
+
+Insert into SEMP 
+(EMPNO,EMPNAME,BASIC,DEPTHEAD)values(
+'0004', 'GEORGE', '6000','0002')
+;
+
+
+===========================================================
+
+Create S, P, J, SPJ tables as specified below and insert a few rows in each table:-
+SUPPLIER
+(S#, Sname, Status, City)
+PARTS
+(P#, Pname, Color, Weight, City)
+PROJECTS
+(J#, Jname, City)
+SUPPLIER-PARTS-PROJECT
+(S#, P#, J#, Qty)
+- S
+- P
+- J
+- SPJ
+Sample data for S# column:- ‘S1’, ‘S2’, ‘S3’, etc.
+Sample data for P# column:- ‘P1’, ‘P2’, ‘P3’, etc.
+Sample data for J# column:- ‘J1’, ‘J2’, ‘J3’, etc.
+Sample data for Status column:- 10, 20, 30, etc.
+
+
+CREATE TABLE  S
+(`S#` CHAR(5) NOT NULL, Sname CHAR(20),
+Status int(4), City CHAR(15));
+
+CREATE TABLE P
+ (`P#` CHAR(6) NOT NULL, Pname CHAR(20),
+ Color CHAR(6), Weight smallint , CITY CHAR(15));
+
+CREATE TABLE J
+(`J#` CHAR(4) NOT NULL,
+Jname CHAR(10), City CHAR(15));
+
+CREATE TABLE SPJ
+(`S#` CHAR(4) NOT NULL,
+`P#` CHAR(4) NOT NULL,
+`J#` CHAR(4) NOT NULL, QTY INT);
+
+insert into S values('S1','Smith',20,'London');
+insert into S values('S2','Jones',10,'Paris');
+insert into S values('S3','Blake',30,'Paris'); 
+insert into S values('S4','Clark',20,'London');
+insert into S values('S5','Adams',30,'Athens');
+
+insert into P values('P1','Nut','Red',12,'London');
+insert into P values('P2','Bolt','Green',17,'Paris');
+insert into P values('P3','Screw','Blue',17,'Rome');
+insert into P values('P4','Screw','Red',14,'London');
+insert into P values('P5','Cam','Blue',12,'Paris');
+insert into P values('P6','Cog','Red',19,'London');
+
+insert into J values('J1','Sorter','Paris');
+insert into J values('J2','Punch','Rome');
+insert into J values('J3','Reader','Athens');
+insert into J values('J4','Console','Athens');
+insert into J values('J5','Collator','London');
+insert into J values('J6','Terminal','Oslo');
+insert into J values('J7','Tape','London');
+
+insert into SPJ values('S1','P1','J1',200);
+insert into SPJ values('S1','P1','J4',700);
+insert into SPJ values('S2','P3','J1',400);
+insert into SPJ values('S2','P3','J2',200);
+insert into SPJ values('S2'    ,'P3',    'J3',    200);
+insert into SPJ values('S2'    ,'P3',    'J4' ,   500);
+insert into SPJ values('S2'    ,'P3',    'J5'  ,  600);
+insert into SPJ values('S2'    ,'P3',    'J6'  , 400);
+insert into SPJ values('S2'    ,'P3',    'J7'  , 800);
+insert into SPJ values('S2'    ,'P5',    'J2' ,   100);
+insert into SPJ values('S3'    ,'P3',    'J1' ,   200);
+insert into SPJ values('S3'    ,'P4',    'J2' ,   500);
+insert into SPJ values('S4'    ,'P6',    'J3' ,   300);
+insert into SPJ values('S4'    ,'P6',    'J7'  ,  300);
+insert into SPJ values('S5'    ,'P2',    'J2'  ,  200);
+insert into SPJ values('S5'    ,'P2',    'J4'  ,  100);
+insert into SPJ values('S5'    ,'P5',    'J5'  ,  500);
+insert into SPJ values('S5'    ,'P5',    'J7'  ,  100);
+insert into SPJ values('S5'    ,'P6',    'J2'  ,  200);
+insert into SPJ values('S5'    ,'P1',    'J4'  ,  100);
+insert into SPJ values('S5'    ,'P3',    'J4'  ,  200);
+insert into SPJ values('S5'    ,'P4',    'J4'  ,  800);
+insert into SPJ values('S5'   ,'P5',    'J4'   , 400);
+insert into SPJ values('S5'    ,'P6',    'J4'  ,  500);
+====================================================================================
+5. Display all the data from the S table. 
+  	
+select * from S;
+=================================================
+6. Display only the S# and SNAME fields from the S table.
+
+select `S#`,Sname from S;
+==============================================================
+7. Display the PNAME and COLOR from the P table for the CITY=”London”. 
+
+select pname ,color from P where city='London';
+=====================================================
+8. Display all the Suppliers from London. 
+
+select sname from S where city='London';
+========================================================
+9. Display all the Suppliers from Paris or Athens.
+
+select sname from S where city in ('Paris','London');
+==========================================================
+10. Display all the Projects in Athens.
+ 
+select Pname from P where city='Athens';
+Empty set (0.00 sec)
+=====================================================
+11. Display all the Partnames with the weight between 12 and 14 (inclusive of both).
+
+ select pname,weight from P where weight between 12 and 14;
+========================================================
+12. Display all the Suppliers with a Status greater than or equal to 20. 
+
+ select sname from S where status >=20;
+========================================================
+ 
+13. Display all the Suppliers except the Suppliers from London. 
+
+select sname from S where city!='London';
+=========================================================
+
+14. Display only the Cities from where the Suppliers come from. 
+
+select city from S;
+=============================================================
+
+15. Assuming that the Part Weight is in GRAMS, display the same in
+MILLIGRAMS and KILOGRAMS. 
+
+select weight*1000 MILLIGRAMS ,weight/1000 KILOGRAMS from P;
+
+==================================================================================
